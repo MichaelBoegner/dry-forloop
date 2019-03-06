@@ -24,13 +24,13 @@ Variable representing the starting index of the iteration.
 Variable representing the operator involved in the current index position comparison with length. Must be entered as a string. 
 
     Options: 
-    '<'
-    '>'
-    '<='
-    '>='
-    '==='
-    '!=='
-    Defaults to '<='
+    -'<'
+    -'>'
+    -'<='
+    -'>='
+    -'==='
+    -'!=='
+    -Defaults to '<='
 
 4. __length__
 Variable representing the length involved in the current index position comparison with length. Must be entered as a string.
