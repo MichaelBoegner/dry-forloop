@@ -1,14 +1,14 @@
 {
-    "name": "@michael.boegner/dry-forloop",
-    "version": "1.0.0",
+    "name": "dry-forloop",
+    "version": "1.0.5",
     "description": "Removes all spaces from a string",
     "license": "MIT",
     "repository": "michael.boegner/dry-forloop",
     "main": "index.js",
     "keywords": [
-        "tiny",
-        "npm",
+        "dry",
+        "forloop",
         "package",
-        "bamblehorse"
+        "boegner"
     ]
 }
