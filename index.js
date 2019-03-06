@@ -1,8 +1,10 @@
-exports.forDry;
+exports.forDry = {
+    dryLoop: function(letter, length, iterator) {
+        console.log("test is working for object", letter, length, iterator)
+    }
 
-function forDry(letter, length, iteration) {
-    console.log("test run", letter, length, iteration);
 }
+
 
 
 
