@@ -1,4 +1,4 @@
-exports.forDry = function(array, letter=null, start=null, length=null, operator=null, iterator=null) {
+exports.forDry = function(array, cb, letter=null, start=null, length=null, operator=null, iterator=null) {
         let i; 
 
         if(letter === null) {
@@ -21,10 +21,11 @@ exports.forDry = function(array, letter=null, start=null, length=null, operator=
             iterator = letter++;
         }
 
-        let solution = [];
-        
+        let solution; 
+
         for(letter = start; letter < length; letter++) {
-           solution.push(array[letter]);
+           
+            solution = cb(array[letter], array[letter] + 3);
         }
         
         return solution;
