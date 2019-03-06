@@ -1,4 +1,4 @@
-exports.forDry = function(array, cb, start=0, operator='<', length='length - 1', iterator='++') {
+exports.forDry = function(array, cb, start=0, operator='<=', length='length - 1', iterator='++') {
         let solution,
             index = start,
             operators = {
