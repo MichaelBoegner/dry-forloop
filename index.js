@@ -1,31 +1,44 @@
-exports.forDry = function(array, cb, letter=null, start=null, length=null, operator=null, iterator=null) {
-        let i; 
-
-        if(letter === null) {
-            letter = i;
-        }
-
+exports.forDry = function(array, cb, operator=null, start=null, length=null, iterator=null) {
+        let index;
+             
         if(start === null) {
             start = 0; 
         }
 
         if(length === null) {
-            length = array.length; 
-        }
-
-        if(operator === null) {
-           operator = `${letter} < ${length}`; 
+            length = array.length - 1; 
         }
 
         if(iterator === null) {
-            iterator = letter++;
+            iterator = index = index + 1;
         }
 
-        let solution; 
+        let solution,
+            operators = {
+                '>': () => {
+                        return index > length; 
+                    }, 
+                '<': () => {
+                        return index < length; 
+                    }, 
+                '>=': () => {
+                        return index >= length; 
+                    }, 
+                '<=': () => {
+                        return index <= length; 
+                    }, 
+                '!==': () => {
+                        return index !== length; 
+                    }, 
+            }; 
 
-        for(letter = start; letter < length; letter++) {
-           
-            solution = cb(array[letter], array[letter] + 3);
+        if(operator === null) {
+            operator = '<';
+        }
+
+        for(index = start; operators[operator](); index++) {
+
+            solution = cb(index, array[index]);
         }
         
         return solution;

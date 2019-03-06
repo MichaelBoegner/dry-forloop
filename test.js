@@ -1,10 +1,9 @@
-const forDry = require("./index") 
+const forDry = require("./index").forDry 
 
 
-let array = [1,2,3,4,5], solution = []; 
+let array = [1,2,3,4,5];
 
-console.log(forDry.forDry(array, (param, param2) => {
-   solution.push(param + 1);
-   return solution;
-
-}));
+console.log(forDry(array, (index, element) => {
+    console.log(index, element);
+    return index;
+}, '!=='));
