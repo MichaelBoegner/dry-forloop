@@ -1,6 +1,6 @@
 {
     "name": "dry-forloop",
-    "version": "1.3.2",
+    "version": "1.3.3",
     "description": "A drier version of Javascript's existing forLoop. Like forEach, but with parameters for start, operator, length, and iterator!",
     "license": "MIT",
     "repository": "michael.boegner/dry-forloop",
