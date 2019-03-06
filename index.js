@@ -1,24 +1,24 @@
-exports.forDry = function(array, cb, start=0, operator='<', length=(array.length-1), iterator='++') {
+exports.forDry = function(array, cb, start=0, operator='<', length='length - 1', iterator='++') {
         let solution,
             index = start,
             operators = {
                 '>': () => {
-                        return index > length; 
+                        return index > lengths[length](); 
                     }, 
                 '<': () => {
-                        return index < length; 
+                        return index < lengths[length](); 
                     }, 
                 '>=': () => {
-                        return index >= length; 
+                        return index >= lengths[length](); 
                     }, 
                 '<=': () => {
-                        return index <= length; 
+                        return index <= lengths[length](); 
                     }, 
                 '!==': () => {
-                        return index !== length; 
+                        return index !== lengths[length](); 
                     }, 
                 '===': () => {
-                        return index === length; 
+                        return index === lengths[length](); 
                     },    
             },
             iterators = {
@@ -27,6 +27,14 @@ exports.forDry = function(array, cb, start=0, operator='<', length=(array.length
                     },
                 '--': () => {
                         return index--; 
+                    },  
+            },
+            lengths = {
+                'length - 1': () => {
+                        return array.length - 1; 
+                    },
+                'length': () => {
+                        return array.length; 
                     },  
             }; 
 
