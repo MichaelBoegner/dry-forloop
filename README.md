@@ -1,6 +1,8 @@
 # dry-forloop #
 A drier version of Javascript's existing forLoop. Like forEach, but with parameters for start, operator, length, and iterator! 
 
+This is an open-source project. We are accepting PRs.
+
 # Syntax #
     
     arr.forDry(function callback(callback [, index [, element]]) {
@@ -10,9 +12,13 @@ A drier version of Javascript's existing forLoop. Like forEach, but with paramet
 # Parameters #
 1. __callback__  
 Function to execute on each element, taking two arguments:  
+    
     index  
+        
         The index of the current element being processed in the array.  
-    element  
+    
+    element 
+         
         The element at the given index in the array.  
 
 2. __start__  
