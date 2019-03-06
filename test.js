@@ -1,3 +1,6 @@
 const forDry = require("./index") 
 
-console.log(forDry.forDry.dryLoop(1,2,3));
+
+let array = [1,2,3,4,5];
+
+console.log(forDry.forDry(array));
