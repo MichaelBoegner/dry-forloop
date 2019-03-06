@@ -1,19 +1,7 @@
-exports.forDry = function(array, cb, operator=null, start=null, length=null, iterator=null) {
-        let index;
-             
-        if(start === null) {
-            start = 0; 
-        }
-
-        if(length === null) {
-            length = array.length - 1; 
-        }
-
-        if(iterator === null) {
-            iterator = index = index + 1;
-        }
-
+exports.forDry = function(array, cb, start=0, length=(array.length-1), operator='<', iterator='++') {
+            
         let solution,
+            index = start,
             operators = {
                 '>': () => {
                         return index > length; 
@@ -30,14 +18,17 @@ exports.forDry = function(array, cb, operator=null, start=null, length=null, ite
                 '!==': () => {
                         return index !== length; 
                     }, 
+            },
+            iterators = {
+                '++': () => {
+                        return index++; 
+                    },
+                '--': () => {
+                        return index--; 
+                    },  
             }; 
 
-        if(operator === null) {
-            operator = '<';
-        }
-
-        for(index = start; operators[operator](); index++) {
-
+        for(index = start; operators[operator](); iterators[iterator]()) {
             solution = cb(index, array[index]);
         }
         
