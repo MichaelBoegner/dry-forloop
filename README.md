@@ -8,19 +8,19 @@ arr.forDry(function callback(currentValue [, index [, array]]) {
 }[, thisArg]);
 
 # Parameters #
-__callback__
+1. __callback__
 Function to execute on each element, taking two arguments:
     index
         The index of the current element being processed in the array.
     element
         The element at the given index in the array.
 
-__start__
+2. __start__
 Variable representing the starting index of the iteration.
 
     Defaults to 0.
 
-__operator__
+3. __operator__
 Variable representing the operator involved in the current index position comparison with length. Must be entered as a string. 
 
     Options: 
@@ -32,7 +32,7 @@ Variable representing the operator involved in the current index position compar
     '!=='
     Defaults to '<='
 
-__length__
+4. __length__
 Variable representing the length involved in the current index position comparison with length. Must be entered as a string.
 
     Options: 
@@ -40,7 +40,7 @@ Variable representing the length involved in the current index position comparis
     'length'
     Defaults to 'length - 1'
 
-__iterator__
+5. __iterator__
 Variable representing the stepwise postive/negative direction of the iteration. Must be entered as a string.
 
     Options: 
