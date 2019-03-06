@@ -1,5 +1,12 @@
-exports.forDry = function(array, cb, start=0, operator='<=', length='length - 1', iterator='++') {
-        let solution,
+exports.forDry;
+
+Array.prototype.forDry = function(cb, start=null, operator=null, length=null, iterator=null) {
+    
+    if(start === null) {
+        start = 0; 
+    }
+    
+    let solution,
             index = start,
             operators = {
                 '>': () => {
@@ -31,19 +38,32 @@ exports.forDry = function(array, cb, start=0, operator='<=', length='length - 1'
             },
             lengths = {
                 'length - 1': () => {
-                        return array.length - 1; 
+                        return this.length - 1; 
                     },
                 'length': () => {
-                        return array.length; 
+                        return this.length; 
                     },  
             }; 
 
-        for(index = start; operators[operator](); iterators[iterator]()) {
-            solution = cb(index, array[index]);
-        }
 
-        return solution;
+    if(operator === null) {
+        operator = '<=';
     }
+    
+    if(length === null) {
+        length = 'length - 1';
+    }
+
+    if(iterator === null) {
+        iterator = '++'; 
+    }
+    
+    for(index = start; operators[operator](); iterators[iterator]()) {
+        solution = cb(index, this[index]);
+    }
+
+    return solution;
+}
 
 
 
