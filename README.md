@@ -18,7 +18,7 @@ Function to execute on each element, taking two arguments:
         The index of the current element being processed in the array.  
     
     element 
-         
+
         The element at the given index in the array.  
 
 2. __start__  
