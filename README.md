@@ -122,7 +122,7 @@ __Length__
 
 __Iterator__  
     
-   array.forDry((index, element) => {console.log(index, element)}, 5, '>', 0, '--');
+    array.forDry((index, element) => {console.log(index, element)}, 5, '>', 0, '--');
     
     Expected return:   
     5 undefined
