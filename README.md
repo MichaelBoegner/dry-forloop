@@ -5,7 +5,7 @@ This is an open-source project. We are accepting PRs.
 
 # Syntax #
 ```javascript
-arr.forDry(function callback(callback [, index [, element]]) {
+arr.forDry(([, index [, element]]) => {
     //user's code and return
 }[, start [, operator [, length [, iterator]]]]);
 ```
