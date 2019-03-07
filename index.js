@@ -63,7 +63,7 @@ Array.prototype.forDry = function(cb, start=null, operator=null, length=null, it
     }
     
     for(index = start; operators[operator](); iterators[iterator]()) {
-        solution = cb(index, this[index]);
+        solution = cb(this[index], index);
     }
 
     return solution;

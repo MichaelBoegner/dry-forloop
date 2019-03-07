@@ -5,7 +5,7 @@ This is an open-source project. We are accepting PRs.
 
 # Syntax #
 ```javascript
-arr.forDry(([, index [, element]]) => {
+arr.forDry(([, element [, index]]) => {
     //user's code and return
 }[, start [, operator [, length [, iterator]]]]);
 ```
@@ -14,13 +14,13 @@ arr.forDry(([, index [, element]]) => {
 1. __callback__  
 Function to execute on each element, taking two arguments:  
     
-    index  
-        
-        The index of the current element being processed in the array.  
-    
     element 
 
         The element at the given index in the array.  
+
+    index  
+        
+        The index of the current element being processed in the array.  
 
 2. __start__  
 Variable representing the starting index of the iteration.  
@@ -72,12 +72,13 @@ forDry() executes the callback function once for each array element. The typical
 forDry() may or may not mutate the array on which it is called depending on use of the callback.  
 
 # Example Code #
-
+    const forDry = require('./index');
+    
     let array = [1, 2, 3, 4, 5];  
 
 __Basic forLoop__  
     
-    array.forDry((index, element) => {console.log(index, element)});  
+    array.forDry((element, index) => {console.log(element, index)});  
     
     Expected return:   
     0 1  
@@ -90,7 +91,7 @@ __Basic forLoop__
 
 __Start__  
     
-    array.forDry((index, element) => {console.log(index, element)}, 1);
+    array.forDry((element, index) => {console.log(element, index)}, 1);
     
     Expected return:   
     1 2
@@ -100,7 +101,7 @@ __Start__
 
 __Operator__  
     
-    array.forDry((index, element) => {console.log(index, element)}, null, '!==');
+    array.forDry((element, index) => {console.log(element, index)}, null, '!==');
     
     Expected return:   
     0 1
@@ -110,7 +111,7 @@ __Operator__
 
 __Length__  
     
-    array.forDry((index, element) => {console.log(index, element)}, null, null, 'length');
+    array.forDry((element, index) => {console.log(element, index)}, null, null, 'length');
     
     Expected return:   
     0 1
@@ -122,7 +123,7 @@ __Length__
 
 __Iterator__  
     
-    array.forDry((index, element) => {console.log(index, element)}, 5, '>', 0, '--');
+    array.forDry((element, index) => {console.log(element, index)}, 5, '>', 0, '--');
     
     Expected return:   
     5 undefined
