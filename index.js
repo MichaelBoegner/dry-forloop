@@ -1,11 +1,6 @@
 exports.forDry;
 
-Array.prototype.forDry = function(cb, start=null, operator=null, length=null, iterator=null) {
-    
-    if(start === null) {
-        start = 0;
-    }
-    
+Array.prototype.forDry = function(cb, start=0, operator='<=', length='length - 1', iterator='++') {
     let solution,
         index = start,
         operators = {
@@ -47,20 +42,7 @@ Array.prototype.forDry = function(cb, start=null, operator=null, length=null, it
             'length': () => {
                     return this.length; 
                 },  
-        }; 
-
-
-    if(operator === null) {
-        operator = '<=';
-    }
-    
-    if(length === null) {
-        length = 'length - 1';
-    }
-
-    if(iterator === null) {
-        iterator = '++'; 
-    }
+        };
     
     for(index = start; operators[operator](); iterators[iterator]()) {
         solution = cb(index, this[index]);
