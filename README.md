@@ -1,5 +1,5 @@
 # dry-forloop #
-A drier version of Javascript's existing forLoop. Like forEach, but with parameters for start, operator, length, and iterator! 
+A drier version of JavaScript's existing forLoop. Like forEach, but with parameters for start, operator, length, and iterator! 
 
 This is an open-source project. We are accepting PRs.
 
