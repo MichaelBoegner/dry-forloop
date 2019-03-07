@@ -1,13 +1,14 @@
 # dry-forloop #
-A drier version of Javascript's existing forLoop. Like forEach, but with parameters for start, operator, length, and iterator! 
+A drier version of JavaScript's existing forLoop. Like forEach, but with parameters for start, operator, length, and iterator! 
 
 This is an open-source project. We are accepting PRs.
 
 # Syntax #
-    
-    arr.forDry(function callback(callback [, index [, element]]) {
+```javascript
+arr.forDry(([, index [, element]]) => {
     //user's code and return
 }[, start [, operator [, length [, iterator]]]]);
+```
 
 # Parameters #
 1. __callback__  
@@ -121,7 +122,7 @@ __Length__
 
 __Iterator__  
     
-   array.forDry((index, element) => {console.log(index, element)}, 5, '>', 0, '--');
+    array.forDry((index, element) => {console.log(index, element)}, 5, '>', 0, '--');
     
     Expected return:   
     5 undefined
