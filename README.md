@@ -64,8 +64,8 @@ forDry() calls a provided callback function once for each element in an array.
 
 callback is invoked with two arguments:  
 
-the index of the element  
 the element of the array  
+the index of the element  
 
 forDry() executes the callback function once for each array element. The typical use case is manipulation of an iterable.  
 
