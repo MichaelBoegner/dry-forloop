@@ -5,8 +5,8 @@ This is an open-source project. We are accepting PRs.
 
 # Syntax #
 ```javascript
-arr.forDry(([, element [, index]]) => {
-    //user's code and return
+arr.forDry(function callback(currentValue [, index [, array]]){
+        //your iterator
 }[, start [, operator [, length [, iterator]]]]);
 ```
 
@@ -14,20 +14,24 @@ arr.forDry(([, element [, index]]) => {
 1. __callback__  
 Function to execute on each element, taking two arguments:  
     
-    element 
+    currentValue 
+        The current element being processed in the array.
 
-        The element at the given index in the array.  
+    index (Optional)
+        The index of the current element being processed in the array.
 
-    index  
-        
-        The index of the current element being processed in the array.  
+    array (Optional)
+        The array forDry() was called upon.
 
-2. __start__  
-Variable representing the starting index of the iteration.  
+2. __start__  (Optional)
+> Defaults to 0
 
-    Defaults to 0.  
+Variable representing the starting index of the iteration.  Must be a number greater then 0.
 
-3. __operator__  
+
+3. __operator__  (Optional)
+> Defaults to '<='  
+
 Variable representing the operator involved in the current index position comparison with length. Must be entered as a string.  
 
     Options:  
@@ -37,37 +41,37 @@ Variable representing the operator involved in the current index position compar
     '>='  
     '==='  
     '!=='  
-    Defaults to '<='  
 
-4. __length__  
+4. __length__  (Optional)
+> Defaults to 'length - 1'  
+
 Variable representing the length involved in the current index position comparison with length. May be a string or number.  
 
     Options:  
     'length - 1'  
     'length'  
     Any number  
-    Defaults to 'length - 1'  
 
-5. __iterator__  
+5. __iterator__  (Optional)
+> Defaults to '++'  
+
 Variable representing the stepwise postive/negative direction of the iteration. Must be entered as a string.  
 
     Options:  
     '++'  
     '--'  
-    Defaults to '++'  
 
 # Return value #  
 Defined by user's code in the callback and subsequent return.  
 
 # Description #  
-forDry() calls a provided callback function once for each element in an array.  
+.forDry() calls a provided callback function once for each element in an array.  
 
-callback is invoked with two arguments:  
+The callback is invoked with three arguments:  
 
 the element of the array  
 the index of the element  
-
-forDry() executes the callback function once for each array element. The typical use case is manipulation of an iterable.  
+the array itself
 
 forDry() may or may not mutate the array on which it is called depending on use of the callback.  
 
