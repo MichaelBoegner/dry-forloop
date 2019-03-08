@@ -88,7 +88,6 @@ __Basic forLoop__
     4 5  
 
 
-
 __Start__  
     
     array.forDry((element, index) => {console.log(element, index)}, 1);

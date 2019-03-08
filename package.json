@@ -8,6 +8,8 @@
     "keywords": [
         "dry",
         "forloop",
+        "loop",
+        "forEach",
         "package"
     ]
 }
