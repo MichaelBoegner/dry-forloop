@@ -74,7 +74,7 @@ forDry() may or may not mutate the array on which it is called depending on use 
 # Example Code #
     const forDry = require('dry-forloop'); 
     
-    let array = [1, 2, 3, 4, 5];  
+    let array = [1, 2, 3, 4, 5], solution = [];  
 
 __Basic forLoop__  
     
@@ -130,3 +130,16 @@ __Iterator__
     3 4
     2 3
     1 2 
+
+__Nested__
+
+    array.forDry((e) => {
+        array.forDry((f) => {
+            solution.push(e + f)
+        }, 1)
+    });
+    
+    console.log(solution);
+
+    Expected return: 
+    [ 3, 4, 5, 6, 4, 5, 6, 7, 5, 6, 7, 8, 6, 7, 8, 9, 7, 8, 9, 10 ]
