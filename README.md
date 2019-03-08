@@ -40,12 +40,12 @@ Variable representing the operator involved in the current index position compar
     Defaults to '<='  
 
 4. __length__  
-Variable representing the length involved in the current index position comparison with length. Must be entered as a string.  
+Variable representing the length involved in the current index position comparison with length. May be a string or number.  
 
     Options:  
     'length - 1'  
     'length'  
-    Any integer  
+    Any number  
     Defaults to 'length - 1'  
 
 5. __iterator__  
