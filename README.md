@@ -72,7 +72,7 @@ forDry() executes the callback function once for each array element. The typical
 forDry() may or may not mutate the array on which it is called depending on use of the callback.  
 
 # Example Code #
-    const forDry = require('./index');
+    const forDry = require('dry-forloop'); 
     
     let array = [1, 2, 3, 4, 5];  
 
