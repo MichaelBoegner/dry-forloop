@@ -1,7 +1,7 @@
 exports.forDry;
 
 Array.prototype.forDry = function(cb, index=0, operator='<=', length='length - 1', iterator='++') {
-    let solution = [];
+        let solution = [];
         const operators = {
             '>': () => {
                     if(lengths[length] === undefined) {
