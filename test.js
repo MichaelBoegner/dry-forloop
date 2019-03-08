@@ -3,7 +3,8 @@ const forDry = require('./index');
 
 //Basic For Loop
 let array = [1, 2, 3, 4, 5], solution = [];
-array.forDry((element, index) => {solution.push([element,index])});  console.log(`Basic For Loop Test: ${solution = [ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ], [ 4, 3 ], [ 5, 4 ] ] ? "Passed":"Failed"}`);
+array.forDry((element, index) => {solution.push([element,index])});  
+console.log(`Basic For Loop Test: ${solution = [ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ], [ 4, 3 ], [ 5, 4 ] ] ? "Passed":"Failed"}`);
 
 //Start at 1
 array = [1, 2, 3, 4, 5], solution = [];
