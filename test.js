@@ -16,15 +16,15 @@ array = [1, 2, 3, 4, 5], solution = [];
 array.forDry((element, index) => {solution.push([element,index])}, null, '!==');
 console.log(`Operator Test: ${solution = [ [ 2, 1 ], [ 3, 2 ], [ 4, 3 ]] ? "Passed":"Failed"}`);
 
-// //Length
-// array = [1, 2, 3, 4, 5], solution = [];
-// array.forDry((element, index) => {solution.push([element,index])}, null, null, 'length');
-// console.log(`Operator Test: ${solution = [ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ], [ 4, 3 ], [ 5, 4 ],[undefined,5]] ? "Passed":"Failed"}`);
+//Length
+array = [1, 2, 3, 4, 5], solution = [];
+array.forDry((element, index) => {solution.push([element,index])}, null, null, 'length');
+console.log(`Length Test: ${solution = [ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ], [ 4, 3 ], [ 5, 4 ],[undefined,5]] ? "Passed":"Failed"}`);
 
 //Iterator
 array = [1, 2, 3, 4, 5], solution = [];
 array.forDry((element, index) => {solution.push(element, index)}, 5, '>', 0, '--');
-console.log(`Operator Test: ${solution = [ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ], [ 4, 3 ], [ 5, 4 ],[undefined,5]].reverse() ? "Passed":"Failed"}`);
+console.log(`Iterator Test: ${solution = [ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ], [ 4, 3 ], [ 5, 4 ],[undefined,5]].reverse() ? "Passed":"Failed"}`);
 
 
 //Nested 

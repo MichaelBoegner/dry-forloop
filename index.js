@@ -1,7 +1,15 @@
 exports.forDry;
 
-Array.prototype.forDry = function(cb, index=0, operator='<=', length='length - 1', iterator='++') {
-        let solution = [];
+Array.prototype.forDry = function(cb, index=0, operator, length, iterator) {
+
+
+        //es6 default values only trigger on undefined and not null, this will trigger on anything false (including 0)
+        operator = operator || '<=';
+        length = length||'length - 1';
+        iterator = iterator||'++';
+        //special case since 0 is considered false for the above methods
+        index == 'null'? index = 0 : "";
+
         const operators = {
             '>': () => {
                     if(lengths[length] === undefined) {
@@ -64,10 +72,10 @@ Array.prototype.forDry = function(cb, index=0, operator='<=', length='length - 1
         }; 
     
     for(index; operators[operator](); iterators[iterator]()) {
-        solution = cb(this[index], index, this);
+        cb(this[index], index, this);
     }
 
-    return solution;
+    return;
 }
 
 
