@@ -17,19 +17,39 @@ Array.prototype.forDry = function(cb, start=null, operator=null, length=null, it
                     }
                 }, 
             '<': () => {
-                    return index < lengths[length](); 
+                    if(lengths[length] === undefined) {
+                        return index < length;
+                    } else {
+                        return index < lengths[length](); 
+                    }
                 }, 
             '>=': () => {
-                    return index >= lengths[length](); 
+                    if(lengths[length] === undefined) {
+                        return index >= length;
+                    } else {
+                        return index >= lengths[length](); 
+                    }
                 }, 
             '<=': () => {
-                    return index <= lengths[length](); 
+                    if(lengths[length] === undefined) {
+                        return index <= length;
+                    } else {
+                        return index <= lengths[length](); 
+                    }
                 }, 
             '!==': () => {
-                    return index !== lengths[length](); 
+                    if(lengths[length] === undefined) {
+                        return index !== length;
+                    } else {
+                        return index !== lengths[length](); 
+                    }
                 }, 
             '===': () => {
-                    return index === lengths[length](); 
+                    if(lengths[length] === undefined) {
+                        return index === length;
+                    } else {
+                        return index === lengths[length](); 
+                    }
                 },    
         },
         iterators = {
