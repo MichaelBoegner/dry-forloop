@@ -1,95 +1,57 @@
 exports.forDry;
 
-Array.prototype.forDry = function(cb, start=null, operator=null, length=null, iterator=null) {
-    
-    if(start === null) {
-        start = 0;
+Array.prototype.forDry = function(cb, index = 0, operator, length, iterator) {
+  //es6 default values only trigger on undefined and not null, this will trigger on anything false (including 0)
+  operator = operator || "<=";
+  length = length || "length - 1";
+  iterator = iterator || "++";
+  //special case since 0 is considered false for the above methods
+  index == "null" ? (index = 0) : "";
+
+  switch (length) {
+    case "length - 1":
+      length = this.length - 1;
+      break;
+    case "length":
+      length = this.length;
+      break;
+    default:
+      length = parseInt(length);
+      break;
+  }
+
+  const operatorsObj = {
+    ">": () => {
+      return index > length;
+    },
+    "<": () => {
+      return index < length;
+    },
+    ">=": () => {
+      return index >= length;
+    },
+    "<=": () => {
+      return index <= length;
+    },
+    "!==": () => {
+      return index !== length;
+    },
+    "===": () => {
+      return index === length;
     }
-    
-    let solution,
-        index = start,
-        operators = {
-            '>': () => {
-                    if(lengths[length] === undefined) {
-                        return index > length;
-                    } else {
-                        return index > lengths[length](); 
-                    }
-                }, 
-            '<': () => {
-                    if(lengths[length] === undefined) {
-                        return index < length;
-                    } else {
-                        return index < lengths[length](); 
-                    }
-                }, 
-            '>=': () => {
-                    if(lengths[length] === undefined) {
-                        return index >= length;
-                    } else {
-                        return index >= lengths[length](); 
-                    }
-                }, 
-            '<=': () => {
-                    if(lengths[length] === undefined) {
-                        return index <= length;
-                    } else {
-                        return index <= lengths[length](); 
-                    }
-                }, 
-            '!==': () => {
-                    if(lengths[length] === undefined) {
-                        return index !== length;
-                    } else {
-                        return index !== lengths[length](); 
-                    }
-                }, 
-            '===': () => {
-                    if(lengths[length] === undefined) {
-                        return index === length;
-                    } else {
-                        return index === lengths[length](); 
-                    }
-                },    
-        },
-        iterators = {
-            '++': () => {
-                    return index++; 
-                },
-            '--': () => {
-                    return index--; 
-                },  
-        },
-        lengths = {
-            'length - 1': () => {
-                    return this.length - 1; 
-                },
-            'length': () => {
-                    return this.length; 
-                },  
-        }; 
-
-
-    if(operator === null) {
-        operator = '<=';
+  };
+  const iteratorObj = {
+    "++": () => {
+      return index++;
+    },
+    "--": () => {
+      return index--;
     }
-    
-    if(length === null) {
-        length = 'length - 1';
-    }
+  };
 
-    if(iterator === null) {
-        iterator = '++'; 
-    }
-    
-    for(index = start; operators[operator](); iterators[iterator]()) {
-        solution = cb(this[index], index);
-    }
+  for (index; operatorsObj[operator](); iteratorObj[iterator]()) {
+    cb(this[index], index, this);
+  }
 
-    return solution;
-}
-
-
-
-
-
+  return;
+};
