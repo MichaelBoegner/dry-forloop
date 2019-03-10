@@ -1,15 +1,17 @@
 {
     "name": "dry-forloop",
-    "version": "1.4.9",
+    "version": "1.5.1",
     "description": "A drier version of Javascript's existing forLoop. Like forEach, but with parameters for start, operator, length, and iterator!",
     "license": "MIT",
     "repository": "MichaelBoegner/dry-forloop",
     "main": "index.js",
     "keywords": [
-        "dry",
         "forloop",
+        "dry",
         "loop",
-        "forEach",
-        "package"
-    ]
+        "forEach"
+    ],
+    "dependencies": {
+        "npm": "^6.9.0"
+    }
 }

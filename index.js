@@ -1,6 +1,6 @@
 exports.forDry;
 
-Array.prototype.forDry = function(cb, index = 0, operator, length, iterator) {
+Array.prototype.forDry = function(index, operator, length, iterator, cb) {
   //es6 default values only trigger on undefined and not null, this will trigger on anything false (including 0)
   operator = operator || "<=";
   length = length || "length - 1";

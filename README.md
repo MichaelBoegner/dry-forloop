@@ -5,22 +5,24 @@ This is an open-source project. We are accepting PRs.
 
 # Syntax #
 ```javascript
-arr.forDry(function callback(currentValue [, index [, array]]){
+arr.forDry([ start [, operator [, length [, iterator]]]], 
+    function callback(element [, index [, array]]){
         //your iterator
-}[, start [, operator [, length [, iterator]]]]);
+    }
+);
 ```
 
 # Parameters #
 1. __callback__  
 Function to execute on each element, taking two arguments:  
     
-    currentValue 
+    element  
         The current element being processed in the array.
 
-    index (Optional)
+    index (Optional)  
         The index of the current element being processed in the array.
 
-    array (Optional)
+    array (Optional)  
         The array forDry() was called upon.
 
 2. __start__  (Optional)
@@ -73,7 +75,7 @@ the element of the array
 the index of the element  
 the array itself
 
-forDry() may or may not mutate the array on which it is called depending on use of the callback.  
+forDry() may or may not mutate the array on which it is called depending on use of the callback. It should be noted that the code does not mutate the Array.prototype itself. Rather, it simply utilizes the given parameters to mutate a standard forLoop and applies these changes to the array variable.  
 
 # Example Code #
     const forDry = require('dry-forloop'); 
@@ -82,7 +84,10 @@ forDry() may or may not mutate the array on which it is called depending on use 
 
 __Basic forLoop__  
     
-    array.forDry((element, index) => {console.log(element, index)});  
+    array.forDry((e, i) => {
+        console.log(e, i);
+        }
+    );  
     
     Expected return:   
     0 1  
@@ -94,7 +99,10 @@ __Basic forLoop__
 
 __Start__  
     
-    array.forDry((element, index) => {console.log(element, index)}, 1);
+    array.forDry(1, null, null, null, (e, i) => {
+        console.log(e, i);
+        }
+    );
     
     Expected return:   
     1 2
@@ -104,7 +112,10 @@ __Start__
 
 __Operator__  
     
-    array.forDry((element, index) => {console.log(element, index)}, null, '!==');
+    array.forDry(null, '!==', null, null, (e, i) => {
+        console.log(e, i);
+        }
+    );
     
     Expected return:   
     0 1
@@ -114,7 +125,10 @@ __Operator__
 
 __Length__  
     
-    array.forDry((element, index) => {console.log(element, index)}, null, null, 'length');
+    array.forDry(null, null, 'length', null, (e, i) => {
+        console.log(e, i);
+        }
+    );
     
     Expected return:   
     0 1
@@ -126,7 +140,10 @@ __Length__
 
 __Iterator__  
     
-    array.forDry((element, index) => {console.log(element, index)}, 5, '>', 0, '--');
+    array.forDry(5, '>', 0, '--', (e, i) => {
+        console.log(e, i);
+        }
+    );
     
     Expected return:   
     5 undefined
@@ -138,9 +155,9 @@ __Iterator__
 __Nested__
 
     array.forDry((e) => {
-        array.forDry((f) => {
-            solution.push(e + f)
-        }, 1)
+        array.forDry(1, (f) => {
+            solution.push(e + f);
+        })
     });
     
     console.log(solution);
