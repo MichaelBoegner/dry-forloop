@@ -14,13 +14,13 @@ arr.forDry([ start [, operator [, length [, iterator]]]],
 
 # Parameters #
 
-1. __start__  (Optional)
+  * __start__  (Optional)
 > Defaults to 0
 
 Variable representing the starting index of the iteration.  Must be a number greater then 0.
 
 
-2. __operator__  (Optional)
+  * __operator__  (Optional)
 > Defaults to '<='  
 
 Variable representing the operator involved in the current index position comparison with length. Must be entered as a string.  
@@ -33,7 +33,7 @@ Variable representing the operator involved in the current index position compar
     '==='  
     '!=='  
 
-3. __length__  (Optional)
+  * __length__  (Optional)
 > Defaults to 'length - 1'  
 
 Variable representing the length involved in the current index position comparison with length. May be a string or number.  
@@ -43,7 +43,7 @@ Variable representing the length involved in the current index position comparis
     'length'  
     Any number  
 
-4. __iterator__  (Optional)
+  * __iterator__  (Optional)
 > Defaults to '++'  
 
 Variable representing the stepwise postive/negative direction of the iteration. Must be entered as a string.  
@@ -52,7 +52,7 @@ Variable representing the stepwise postive/negative direction of the iteration. 
     '++'  
     '--'  
 
-5. __callback__  
+  * __callback__  
 Function to execute on each element, taking three arguments:  
     
     element  
