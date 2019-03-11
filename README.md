@@ -13,25 +13,14 @@ arr.forDry([ start [, operator [, length [, iterator]]]],
 ```
 
 # Parameters #
-1. __callback__  
-Function to execute on each element, taking two arguments:  
-    
-    element  
-        The current element being processed in the array.
 
-    index (Optional)  
-        The index of the current element being processed in the array.
-
-    array (Optional)  
-        The array forDry() was called upon.
-
-2. __start__  (Optional)
+1. __start__  (Optional)
 > Defaults to 0
 
 Variable representing the starting index of the iteration.  Must be a number greater then 0.
 
 
-3. __operator__  (Optional)
+2. __operator__  (Optional)
 > Defaults to '<='  
 
 Variable representing the operator involved in the current index position comparison with length. Must be entered as a string.  
@@ -44,7 +33,7 @@ Variable representing the operator involved in the current index position compar
     '==='  
     '!=='  
 
-4. __length__  (Optional)
+3. __length__  (Optional)
 > Defaults to 'length - 1'  
 
 Variable representing the length involved in the current index position comparison with length. May be a string or number.  
@@ -54,7 +43,7 @@ Variable representing the length involved in the current index position comparis
     'length'  
     Any number  
 
-5. __iterator__  (Optional)
+4. __iterator__  (Optional)
 > Defaults to '++'  
 
 Variable representing the stepwise postive/negative direction of the iteration. Must be entered as a string.  
@@ -62,6 +51,18 @@ Variable representing the stepwise postive/negative direction of the iteration. 
     Options:  
     '++'  
     '--'  
+
+5. __callback__  
+Function to execute on each element, taking two arguments:  
+    
+    element  
+        The current element being processed in the array.
+
+    index (Optional)  
+        The index of the current element being processed in the array.
+
+    array (Optional)  
+        The array forDry() was called upon.
 
 # Return value #  
 Defined by user's code in the callback and subsequent return.  
