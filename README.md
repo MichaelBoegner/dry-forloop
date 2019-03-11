@@ -53,7 +53,7 @@ Variable representing the stepwise postive/negative direction of the iteration. 
     '--'  
 
 5. __callback__  
-Function to execute on each element, taking two arguments:  
+Function to execute on each element, taking three arguments:  
     
     element  
         The current element being processed in the array.
